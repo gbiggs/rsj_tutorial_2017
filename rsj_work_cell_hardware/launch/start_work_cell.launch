@@ -1,0 +1,36 @@
+<launch>
+  <!-- The robot description, used by many of the control nodes -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro.py '$(find rsj_work_cell_description)/urdf/work_cell.urdf.xacro'"
+    />
+
+  <!-- Start the arm hardware controllers -->
+  <include file="$(find crane_plus_hardware)/launch/start_arm.launch"/>
+
+  <!-- Start the camera -->
+  <node name="camera" pkg="usb_cam" type="usb_cam_node" output="screen">
+    <param name="camera_name" value="elecom_ucam"/>
+    <param name="camera_frame_id" value="camera_link"/>
+    <param name="video_device" value="/dev/video0"/>
+    <param name="image_width" value="640"/>
+    <param name="image_height" value="480"/>
+    <param name="pixel_format" value="yuyv"/>
+    <param name="io_method" value="mmap"/>
+  </node>
+
+  <!-- Start the transform publisher for the calibrated camera position -->
+  <node name="camera_transform_publisher"
+      pkg="tf"
+      type="static_transform_publisher"
+      args="0.317882
+            -0.0182006
+            0.495691
+            0.731975
+            0.662844
+            -0.113238
+            -0.109671
+            /world
+            /camera_link
+            100"
+    />
+</launch>

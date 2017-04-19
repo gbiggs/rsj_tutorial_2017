@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<robot
+    name="rsj_work_cell"
+    xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+    xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+    xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+    xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Include the Crane+ generator macro -->
+  <xacro:include filename="$(find crane_plus_description)/urdf/crane_plus.xacro"/>
+
+  <!-- A link to provide the location reference of the work cell -->
+  <link name="world"/>
+
+  <!-- Place a Crane+ manipulator at the centre of the world -->
+  <crane_plus parent="world"
+              servo_color="black" bracket_color="grey" gripper_color="black"
+              joints_vlimit="1.571"
+              pan_llimit="-2.617" pan_ulimit="2.617">
+    <origin xyz="0 0 0"/>
+  </crane_plus>
+
+  <!-- Place a camera in the world with a link that can be calibrated -->
+  <link name="camera_link">
+    <!--<visual>
+      <geometry>
+        <box size="0.025 0.05 0.025"/>
+      </geometry>
+      <material name="camera_grey">
+        <color rgba="0.3 0.3 0.3 1.0"/>
+      </material>
+      <origin xyz="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.025 0.05 0.025"/>
+      </geometry>
+      <origin xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0.0025" rpy="0 0 0"/>
+      <inertia ixx="2.60416666667e-05" ixy="0" ixz="0" iyy="2.60416666667e-05" iyz="0" izz="1.04166666667e-05"/>
+    </inertial>-->
+  </link>
+  <joint name="camera" type="fixed">
+    <parent link="world"/>
+    <child link="camera_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+</robot>

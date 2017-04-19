@@ -1,0 +1,24 @@
+<package>
+  <name>rsj_pick_and_place</name>
+  <version>0.1.0</version>
+  <description>
+    A simple demonstration of picking and placing blocks found by a sensor.
+  </description>
+  <author>Geoffrey Biggs</author>
+  <maintainer email="geoffrey.biggs@aist.go.jp">Geoffrey Biggs</maintainer>
+  <license>BSD</license>
+
+  <!--<url type="website">http://ros.org/wiki/turtlebot_arm_description</url>
+  <url type="repository">https://github.com/turtlebot/turtlebot_arm</url>
+  <url type="bugtracker">https://github.com/turtlebot/turtlebot_arm/issues</url>-->
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>rospy</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>control_msgs</run_depend>
+  <run_depend>trajectory_msgs</run_depend>
+  <run_depend>moveit_msgs</run_depend>
+  <run_depend>moveit_commander</run_depend>
+</package>

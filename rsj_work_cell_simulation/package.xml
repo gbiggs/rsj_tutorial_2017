@@ -1,0 +1,20 @@
+<package>
+  <name>rsj_work_cell_simulation</name>
+  <version>0.1.0</version>
+  <description>
+   work_cell_simulation contains launch files for running the the RSJ 2017
+   tutorial work cell in a Gazebo simulation.
+  </description>
+  <author>Geoffrey Biggs</author>
+  <maintainer email="geoffrey.biggs@aist.go.jp">Geoffrey Biggs</maintainer>
+  <license>BSD</license>
+
+  <!--<url type="website">http://ros.org/wiki/turtlebot_arm_description</url>
+  <url type="repository">https://github.com/turtlebot/turtlebot_arm</url>
+  <url type="bugtracker">https://github.com/turtlebot/turtlebot_arm/issues</url>-->
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>urdf</run_depend>
+  <run_depend>work_cell_description</run_depend>
+</package>
