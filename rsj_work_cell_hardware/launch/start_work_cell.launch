@@ -22,13 +22,13 @@
   <node name="camera_transform_publisher"
       pkg="tf"
       type="static_transform_publisher"
-      args="0.317882
-            -0.0182006
-            0.495691
-            0.731975
-            0.662844
-            -0.113238
-            -0.109671
+      args="0.318846
+            -0.0190363
+            0.49518
+            0.735879
+            0.657887
+            -0.111644
+            -0.114901
             /world
             /camera_link
             100"
