@@ -8,6 +8,7 @@ For the RSJ 2017 tutorial.
 """
 
 import actionlib
+import copy
 import math
 import moveit_commander
 import rospy
@@ -144,7 +145,7 @@ def do_grasp(arm, object_pose, grasp_prepare_z, grasp_z, gripper):
 def do_place(arm, place_pose, gripper):
     """Move the arm to the pose for placing an object."""
     # Move to the place position z+0.05
-    place_prepare_pose = place_pose
+    place_prepare_pose = copy.deepcopy(place_pose)
     place_prepare_pose.position.z += 0.05
     rospy.loginfo(
         '[RSJPickAndPlace] Moving arm to place-prepare pose: ' +
