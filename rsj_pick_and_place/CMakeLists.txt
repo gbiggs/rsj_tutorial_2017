@@ -10,6 +10,10 @@ find_package(
     moveit_ros_planning
     moveit_ros_planning_interface
     moveit_visual_tools
+    control_msgs
+    geometry_msgs
+    shape_msgs
+    actionlib
 )
 
 find_package(
@@ -24,8 +28,11 @@ catkin_package(
   CATKIN_DEPENDS
     rospy
     control_msgs
+    geometry_msgs
+    shape_msgs
     moveit_core
     moveit_ros_planning_interface
+    actionlib
 )
 
 include_directories(
